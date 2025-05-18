@@ -1,0 +1,21 @@
+{
+  "name": "phaser-clock",
+  "version": "1.0.0",
+  "description": "Real-Time Clock with WorldTime API using Phaser.js",
+  "main": "src/game.ts",
+  "scripts": {
+    "prebuild": "mkdir -p dist",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack serve --open"
+  },
+  "dependencies": {
+    "phaser": "^3.60.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+} 
