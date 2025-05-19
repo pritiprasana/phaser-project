@@ -23,7 +23,7 @@ export default class LoadingScene extends Phaser.Scene {
       delay: 100,
       callback: this.updateProgress,
       callbackScope: this,
-      repeat: this.totalSteps - 1, // Repeat one less than total steps (first call is not a repeat)
+      repeat: this.totalSteps - 1, 
     });
   }
 

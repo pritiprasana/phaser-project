@@ -8,7 +8,7 @@ A lightweight front-end application built with Phaser.js and TypeScript that dis
 - Displays days in top-left corner
 - Displays hours:minutes:seconds (HH:MM:SS) in bottom-right corner
 - Smooth transitions when updating the display
-- Fully responsive design that adapts to different screen sizes
+- Not Fully responsive design yet, but handles some extent of resizing
 - Robust error handling with fallback mechanisms
 
 ## Architecture
@@ -25,10 +25,10 @@ The application follows an event-driven architecture with clearly separated comp
    - Centralized event bus for communication between components
    - Ensures loose coupling between services and UI elements
 
-3. **Service Layer (UptimeService.ts)**
-   - Singleton service responsible for API communication
-   - Handles data fetching, formatting, and error recovery
-   - Implements multiple fallback strategies for reliability
+3. **Data Service (UptimeService.ts)**
+   - Handles getting data from the API
+   - Formats time data for display
+   - Handles errors when API is down
 
 4. **Scene Management**
    - **Loading Scene**: Handles asset loading and initial setup
@@ -41,17 +41,11 @@ The application follows an event-driven architecture with clearly separated comp
 3. Events are emitted when data is updated or errors occur
 4. Clock scene listens for these events and updates the UI accordingly
 
-### Error Handling Strategy
+### Error Handling
 
-The application implements a multi-layered approach to error handling:
+The application handles problems in simple ways:
 
-1. **Connection Error Recovery**
-   - Graceful error reporting with meaningful messages
-   - Fallback to last known good data if available
-
-2. **Data Fallback Mechanism**
-   - If no previous data is available, generates mock data based on current time
-   - Ensures continuous operation even during extended API outages
+1. Shows clear error messages when things go wrong
 
 ## Setup Instructions
 
